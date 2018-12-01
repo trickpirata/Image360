@@ -200,7 +200,7 @@ open class Image360View: GLKView {
         unloadTextures()
     }
     
-    public override func layoutSubviews() {
+    open override func layoutSubviews() {
         super.layoutSubviews()
         viewAspectRatio = frame.size.width / frame.size.height
     }
@@ -242,7 +242,7 @@ open class Image360View: GLKView {
     }
 
     /// Redraw method.
-    public override func draw(_ rect: CGRect) {
+    open override func draw(_ rect: CGRect) {
         EAGLContext.setCurrent(self.context)
         
         projectionMatrix = GLKMatrix4Identity
@@ -291,15 +291,15 @@ open class Image360View: GLKView {
         glDisableVertexAttribArray(aUV)
     }
 
-    override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         touchesHandler?.image360View(self, touchesBegan: touches, with: event)
     }
 
-    override public func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override open func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         touchesHandler?.image360View(self, touchesMoved: touches, with: event)
     }
 
-    override public func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override open func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         touchesHandler?.image360View(self, touchesEnded: touches, with: event)
     }
 

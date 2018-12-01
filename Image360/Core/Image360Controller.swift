@@ -151,7 +151,7 @@ open class Image360Controller: UIViewController {
         gestureController.inertia = inertia
     }
 
-    public override func loadView() {
+    open override func loadView() {
         super.loadView()
         let orientationView = OrientationView(frame: CGRect(x: 0.0, y: 0.0, width: 30.0, height: 30.0))
         orientationView.backgroundColor = UIColor(white: 0.5, alpha: 0.5)
@@ -181,18 +181,18 @@ open class Image360Controller: UIViewController {
     /// Keeps data about motion controller enabled status while view is not appear.
     private var isMotionControllerEnabled: Bool
 
-    public override func viewWillAppear(_ animated: Bool) {
+    open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         imageView.loadTexturesIfNeeded()
     }
 
-    public override func viewDidAppear(_ animated: Bool) {
+    open override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         motionController.isEnabled = isMotionControllerEnabled
         isAppear = true
     }
 
-    public override func viewDidDisappear(_ animated: Bool) {
+    open override func viewDidDisappear(_ animated: Bool) {
         imageView.unloadTextures()
 
         super.viewDidDisappear(animated)
