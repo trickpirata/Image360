@@ -49,7 +49,7 @@ public protocol Image360ViewObserver: class {
 /// 
 /// You could change current dysplayed image via `image` property.
 /// Control view utput via `rotationAngleXZ`, `rotationAngleY` and `cameraFovDegree` properties.
-public class Image360View: GLKView {
+open class Image360View: GLKView {
     // MARK: Sphere data
     private var spheres = [Sphere?].init(repeating: nil, count: 2)
 

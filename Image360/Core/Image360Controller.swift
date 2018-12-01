@@ -28,7 +28,7 @@ private let blackFileURL = Bundle(for: Image360Controller.self).url(forResource:
 
 /// ## Image360Controller
 /// This controller presentes a special view to dysplay 360° panoramic image.
-public class Image360Controller: UIViewController {
+open class Image360Controller: UIViewController {
     /// Image 360 view which actually dysplays 360° panoramic image.
     public var imageView: Image360View {
         return image360GLController.imageView
